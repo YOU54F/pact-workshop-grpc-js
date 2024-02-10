@@ -25,25 +25,25 @@ describe("Plugins", () => {
               protocol: "grpc",
             },
           ],
-          // provider: "area-calculator-provider",
-          // pactUrls: [
-          //   path.join(
-          //     __dirname,
-          //     "../",
-          //     "../",
-          //     "consumer",
-          //     "pacts",
-          //     "area-calculator-consumer-js-area-calculator-provider.json"
-          //   ),
-          // ],
-          providerVersion: "1.0.0",
-          providerVersionBranch: "test",
-          consumerVersionSelectors: [{
-              latest: true
-            }],
-          pactBrokerUrl: process.env.PACT_BROKER_URL || "http://127.0.0.1:8000",
-          pactBrokerUsername: process.env.PACT_BROKER_USERNAME || "pact_workshop",
-          pactBrokerPassword: process.env.PACT_BROKER_PASSWORD || "pact_workshop",
+          provider: "area-calculator-provider",
+          pactUrls: [
+            path.join(
+              __dirname,
+              "../",
+              "../",
+              "consumer",
+              "pacts",
+              "area-calculator-consumer-js-area-calculator-provider.json"
+            ),
+          ],
+          // providerVersion: "1.0.0",
+          // providerVersionBranch: "test",
+          // consumerVersionSelectors: [{
+          //     latest: true
+          //   }],
+          // pactBrokerUrl: process.env.PACT_BROKER_URL || "http://127.0.0.1:8000",
+          // pactBrokerUsername: process.env.PACT_BROKER_USERNAME || "pact_workshop",
+          // pactBrokerPassword: process.env.PACT_BROKER_PASSWORD || "pact_workshop",
         });
 
         return v.verifyProvider();
