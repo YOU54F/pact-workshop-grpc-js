@@ -28,29 +28,30 @@
     "@grpc/proto-loader": "0.8.0"
   },
   "devDependencies": {
-    "@pact-foundation/pact": "15.0.1",
+    "@pact-foundation/pact": "^15.0.1",
+    "@tsconfig/node16": "^16.1.1",
     "@types/chai": "^4.3.11",
     "@types/chai-as-promised": "7.1.8",
     "@types/mocha": "^10.0.6",
-    "@tsconfig/node16": "^16.1.1",
+    "@types/node": "24.5.2",
     "chai": "^4.4.1",
     "chai-as-promised": "^7.1.1",
-    "mocha": "^10.3.0",
-    "rimraf": "^5.0.5",
-    "ts-node": "^10.9.2",
-    "@types/node": "24.5.2",
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^5.5.4",
+    "mocha": "^10.3.0",
     "prettier": "^3.6.2",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },
   "eslintConfig": {
     "ignorePatterns": [
       "**/*.js",
       "proto/**/*.ts"
-    ]},
+    ]
+  },
   "config": {
     "pact_do_not_track": true
   }
