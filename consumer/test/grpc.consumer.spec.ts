@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-expression no-empty */
 import chai from "chai";
 import chaiAsPromised from "chai-as-promised";
-import { SpecificationVersion, PactV4, LogLevel } from "@pact-foundation/pact";
+import { SpecificationVersion, Pact, LogLevel } from "@pact-foundation/pact";
 import { client, getShapeMessage } from "../consumer";
 import * as path from "path";
 chai.use(chaiAsPromised);
@@ -10,7 +10,7 @@ const { expect } = chai;
 
 describe("Plugins - grpc Protocol", () => {
   describe("TCP interface", () => {
-    const pact = new PactV4({
+    const pact = new Pact({
       consumer: "area-calculator-consumer-js",
       provider: "area-calculator-provider",
       spec: SpecificationVersion.SPECIFICATION_VERSION_V4,
@@ -36,7 +36,7 @@ describe("Plugins - grpc Protocol", () => {
           .addSynchronousInteraction("A gRPC calculateOne request")
           .usingPlugin({
             plugin: "protobuf",
-            version: "0.3.13",
+            version: "0.6.5",
           })
           .withPluginContents(JSON.stringify(grpcMessage), "application/grpc")
           .startTransport("grpc", HOST)
